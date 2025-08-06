@@ -1,4 +1,4 @@
-package com.devflowteam.data.remote
+package com.devflowteam.data.remote.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

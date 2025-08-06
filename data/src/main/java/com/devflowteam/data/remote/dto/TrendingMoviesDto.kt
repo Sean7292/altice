@@ -1,10 +1,10 @@
-package com.devflowteam.data.remote
+package com.devflowteam.data.remote.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class PopularMoviesTodayResponse(
+data class TrendingMoviesDto(
     val page: Long,
     @SerialName("results")
     val movies: List<MovieDto>,
