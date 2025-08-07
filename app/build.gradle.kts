@@ -71,6 +71,9 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.paging.runtime)
+//    implementation("androidx.paging:paging-compose:3.3.6")
+//    implementation("androidx.paging:paging-runtime-ktx:3.3.6")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

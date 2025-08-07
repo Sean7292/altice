@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                             composable<Destination.DetailScreen> {
                                 val args = it.toRoute<Destination.DetailScreen>()
 
-
                             }
                         }
                     }
