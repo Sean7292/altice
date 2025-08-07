@@ -44,6 +44,7 @@ dependencies {
 //    implementation(libs.kotlinx.serialization.json)
 //    implementation(libs.okhttp)
 
+    testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.junit)
 }
