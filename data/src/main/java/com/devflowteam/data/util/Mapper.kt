@@ -48,9 +48,8 @@ fun MovieDetailDto.toDomain() = MovieDetail(
     voteCount = voteCount
 )
 
-fun Movie.toEntity() = MovieEntity(
+fun MovieDto.toEntity() = MovieEntity(
     id = id,
-    isFavorite = isFavorite,
     adult = adult,
     posterPath = posterPath,
     title = title,
