@@ -57,6 +57,8 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
 
+    implementation(libs.androidx.navigation.compose)
+
     implementation(libs.androidx.room.ktx)
 
     implementation(libs.koin.core)

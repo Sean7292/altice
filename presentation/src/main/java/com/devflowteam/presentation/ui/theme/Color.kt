@@ -1,4 +1,4 @@
-package com.devflowteam.altice.ui.theme
+package com.devflowteam.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,9 +1,6 @@
-package com.devflowteam.altice
+package com.devflowteam.altice.di
 
 import android.app.Application
-import com.devflowteam.altice.di.appModule
-import com.devflowteam.altice.di.dataModule
-import com.devflowteam.altice.di.domainModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
