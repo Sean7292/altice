@@ -10,6 +10,8 @@ import com.devflowteam.data.local.room.movie.MovieEntity
 import com.devflowteam.data.local.room.movie_detail.MovieDetailDatabase
 import com.devflowteam.data.mediator.TrendingMoviesRemoteMediator
 import com.devflowteam.data.remote.TMDBApiService
+import com.devflowteam.data.repository.MovieDetailRepositoryImpl
+import com.devflowteam.domain.repository.MovieDetailRepository
 import com.devflowteam.domain.util.Time
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -96,5 +98,13 @@ val dataModule = module {
             klass = MovieDetailDatabase::class.java,
             name = MOVIE_DETAIL_DB_NAME
         ).build()
+    }
+
+    single<MovieDetailRepository> {
+        val db: MovieDetailDatabase = get()
+
+        MovieDetailRepositoryImpl(
+            dao = db.dao()
+        )
     }
 }

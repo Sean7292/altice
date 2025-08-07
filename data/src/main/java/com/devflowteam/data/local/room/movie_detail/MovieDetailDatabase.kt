@@ -8,5 +8,5 @@ import com.devflowteam.data.local.util.Converters
 @Database(entities = [MovieDetailEntity::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class MovieDetailDatabase: RoomDatabase() {
-    abstract fun movieDetailDao(): MovieDetailDao
+    abstract fun dao(): MovieDetailDao
 }

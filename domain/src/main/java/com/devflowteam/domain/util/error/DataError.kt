@@ -7,7 +7,7 @@ sealed interface DataError: Error {
         SERVER,
     }
     enum class Local: Error {
-        DISK_FULL,
+        FULL_DISK,
         UNKNOWN,
     }
 }
