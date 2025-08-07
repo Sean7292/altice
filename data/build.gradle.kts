@@ -41,5 +41,9 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
 
+//    implementation(libs.kotlinx.serialization.json)
+//    implementation(libs.okhttp)
 
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.junit)
 }

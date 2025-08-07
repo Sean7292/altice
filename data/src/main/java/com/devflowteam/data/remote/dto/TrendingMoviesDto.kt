@@ -11,5 +11,5 @@ data class TrendingMoviesDto(
     @SerialName("total_pages")
     val totalPages: Long,
     @SerialName("total_results")
-    val totalResults: Long,
+    val totalResults: Long
 )

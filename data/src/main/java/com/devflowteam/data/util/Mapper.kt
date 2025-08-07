@@ -15,7 +15,9 @@ import com.devflowteam.domain.model.TrendingMovies
 
 fun TrendingMoviesDto.toDomain() = TrendingMovies(
     page = page,
-    movies = movies.map { it.toDomain() }
+    movies = movies.map { it.toDomain() },
+    totalPages = totalPages,
+    totalResults = totalResults
 )
 
 fun MovieDetailDto.toDomain() = MovieDetail(
