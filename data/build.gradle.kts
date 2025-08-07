@@ -52,7 +52,7 @@ dependencies {
     implementation(libs.androidx.paging.runtime)
 //    implementation("androidx.paging:paging-compose:3.4.0-alpha02")
 
-
+    implementation(libs.androidx.room.paging)
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
