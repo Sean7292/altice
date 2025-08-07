@@ -1,5 +1,10 @@
 package com.devflowteam.data.util
 
+import com.devflowteam.data.local.room.movie.MovieEntity
+import com.devflowteam.data.local.room.movie_detail.MovieDetailEntity
+import com.devflowteam.data.local.room.movie_detail.model.BelongsToCollectionCache
+import com.devflowteam.data.local.room.movie_detail.model.GenreCache
+import com.devflowteam.data.local.room.movie_detail.model.ProductionCompanyCache
 import com.devflowteam.data.remote.dto.BelongsToCollectionDto
 import com.devflowteam.data.remote.dto.GenreDto
 import com.devflowteam.data.remote.dto.MovieDetailDto
@@ -43,6 +48,24 @@ fun MovieDetailDto.toDomain() = MovieDetail(
     voteCount = voteCount
 )
 
+fun Movie.toEntity() = MovieEntity(
+    id = id,
+    isFavorite = isFavorite,
+    adult = adult,
+    posterPath = posterPath,
+    title = title,
+    voteAverage = voteAverage
+)
+
+fun MovieEntity.toDomain() = Movie(
+    id = id,
+    isFavorite = isFavorite,
+    adult = adult,
+    posterPath = posterPath,
+    title = title,
+    voteAverage = voteAverage
+)
+
 fun BelongsToCollectionDto.toDomain() = BelongsToCollection(
     id = id,
     name = name,
@@ -58,7 +81,6 @@ fun GenreDto.toDomain() = Genre(
 fun MovieDto.toDomain() = Movie(
     adult = adult,
     id = id,
-    originalTitle = originalTitle,
     posterPath = posterPath,
     title = title,
     voteAverage = voteAverage
@@ -69,4 +91,90 @@ fun ProductionCompanyDto.toDomain() = ProductionCompany(
     logoPath = logoPath,
     name = name,
     originalCountry = originCountry
+)
+
+fun MovieDetailEntity.toDomain() = MovieDetail(
+    isFavorite = isFavorite,
+    adult = adult,
+    backdropPath = backdropPath,
+    belongsToCollection = belongsToCollection.toDomain(),
+    budget = budget,
+    genres = genres.map { it.toDomain() },
+    homepage = homepage,
+    id = id,
+    originCountry = originCountry,
+    originalTitle = originalTitle,
+    overview = overview,
+    posterPath = posterPath,
+    productionCompanies = productionCompanies.map { it.toDomain() },
+    releaseDate = releaseDate,
+    revenue = revenue,
+    runtime = runtime,
+    tagline = tagline,
+    title = title,
+    video = video,
+    voteAverage = voteAverage,
+    voteCount = voteCount
+)
+
+fun MovieDetail.toEntity() = MovieDetailEntity(
+    isFavorite = isFavorite,
+    adult = adult,
+    backdropPath = backdropPath,
+    belongsToCollection = belongsToCollection.toCache(),
+    budget = budget,
+    genres = genres.map { it.toCache() },
+    homepage = homepage,
+    id = id,
+    originCountry = originCountry,
+    originalTitle = originalTitle,
+    overview = overview,
+    posterPath = posterPath,
+    productionCompanies = productionCompanies.map { it.toCache() },
+    releaseDate = releaseDate,
+    revenue = revenue,
+    runtime = runtime,
+    tagline = tagline,
+    title = title,
+    video = video,
+    voteAverage = voteAverage,
+    voteCount = voteCount
+)
+
+fun BelongsToCollectionCache.toDomain() = BelongsToCollection(
+    id = id,
+    name = name,
+    posterPath = posterPath,
+    backdropPath = backdropPath
+)
+
+fun BelongsToCollection.toCache() = BelongsToCollectionCache(
+    id = id,
+    name = name,
+    posterPath = posterPath,
+    backdropPath = backdropPath
+)
+
+fun GenreCache.toDomain() = Genre(
+    id = id,
+    name = name
+)
+
+fun Genre.toCache() = GenreCache(
+    id = id,
+    name = name
+)
+
+fun ProductionCompanyCache.toDomain() = ProductionCompany(
+    id = id,
+    logoPath = logoPath,
+    name = name,
+    originalCountry = originalCountry
+)
+
+fun ProductionCompany.toCache() = ProductionCompanyCache(
+    id = id,
+    logoPath = logoPath,
+    name = name,
+    originalCountry = originalCountry
 )

@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
 
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
 }
 
 android {
@@ -32,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
 }
 
 dependencies {
@@ -41,8 +46,17 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
 
-//    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.serialization.json)
 //    implementation(libs.okhttp)
+
+    implementation(libs.androidx.paging.runtime)
+//    implementation("androidx.paging:paging-compose:3.4.0-alpha02")
+
+
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
